@@ -9,6 +9,8 @@ vim.opt.shortmess:append({ W = true, I = true, c = true })
 vim.opt.showmode = false -- dont show mode since we have a statusline
 vim.opt.listchars = "space:·,trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 vim.opt.pumblend = 10
+vim.opt.clipboard = "unnamedplus"
+
 
 vim.opt.swapfile = false
 

@@ -251,17 +251,17 @@ else
   map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
   map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
-  -- Move selected line / block of text in visual mode
-  -- shift + k to move up
-  -- shift + j to move down
-  map("n", "<C-S-j>", "<cmd>m .+1<cr>==", { desc = "Move down", silent = true })
-  map("n", "<C-S-k>", "<cmd>m .-2<cr>==", { desc = "Move up", silent = true })
-  map("i", "<C-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", silent = true })
-  map("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
-  map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
-  map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
-
-
+  if vim.fn.has('macunix') then
+    -- Move selected line / block of text in visual mode
+    -- shift + k to move up
+    -- shift + j to move down
+    map("n", "<C-S-j>", "<cmd>m .+1<cr>==", { desc = "Move down", silent = true })
+    map("n", "<C-S-k>", "<cmd>m .-2<cr>==", { desc = "Move up", silent = true })
+    map("i", "<C-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", silent = true })
+    map("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
+    map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
+    map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
+  end
 end
 
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
