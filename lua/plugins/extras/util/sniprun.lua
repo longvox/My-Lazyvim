@@ -17,7 +17,7 @@ return {
   {
     "michaelb/sniprun",
     event = "VeryLazy",
-    build = "bash ./install.sh",
+    build = "sh ./install.sh",
     config = function()
       -- HACK: https://michaelb.github.io/sniprun/sources/README.html#usage
       require("sniprun").setup({

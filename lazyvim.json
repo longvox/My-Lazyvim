@@ -19,6 +19,8 @@
     "lazyvim.plugins.extras.vscode",
     "plugins.coding",
     "plugins.editor",
+    "plugins.extras.editor.flash",
+    "plugins.extras.editor.fzf",
     "plugins.extras.editor.editorconfig",
     "plugins.extras.editor.git-blame",
     "plugins.extras.editor.git-conflict",
@@ -40,7 +42,6 @@
     "plugins.extras.util.multi-cursor",
     "plugins.extras.util.quickfix",
     "plugins.extras.util.rest-client",
-    "plugins.extras.util.sniprun",
     "plugins.lang",
     "plugins.ui"
   ],
