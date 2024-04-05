@@ -29,7 +29,7 @@ return {
       servers = {
         intelephense = {
           init_options = {
-            licenceKey = '00QB0ZZ0H79UKE1',
+            licenceKey = os.getenv('INTELEPHENSE_LICENSE_KEY'),
           },
         },
       },

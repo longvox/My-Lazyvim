@@ -54,11 +54,11 @@ return {
         {
           title = "Hurl Nvim",
           size = {
-            width = 0.4
+            width = 0.4,
           },
-          ft = "hurl-nvim"
+          ft = "hurl-nvim",
         },
-      }
+      },
     },
   },
 }

@@ -10,20 +10,19 @@ if vim.fn.executable("btop") == 1 then
   require("lazyvim.util").terminal.open({ "btop" }, { esc_esc = false, ctrl_hjkl = false })
 end
 
-
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
-if vim.fn.has('macunix') then
-    -- Move selected line / block of text in visual mode
-    -- shift + k to move up
-    -- shift + j to move down
-    map("n", "<C-S-j>", "<cmd>m .+1<cr>==", { desc = "Move down", silent = true })
-    map("n", "<C-S-k>", "<cmd>m .-2<cr>==", { desc = "Move up", silent = true })
-    map("i", "<C-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", silent = true })
-    map("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
-    map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
-    map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
+if vim.fn.has("macunix") then
+  -- Move selected line / block of text in visual mode
+  -- shift + k to move up
+  -- shift + j to move down
+  map("n", "<C-S-j>", "<cmd>m .+1<cr>==", { desc = "Move down", silent = true })
+  map("n", "<C-S-k>", "<cmd>m .-2<cr>==", { desc = "Move up", silent = true })
+  map("i", "<C-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down", silent = true })
+  map("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
+  map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
+  map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
 end
 
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
@@ -75,5 +74,3 @@ map("n", "c", '"_c')
 map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
-
-

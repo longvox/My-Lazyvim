@@ -2,7 +2,12 @@ local util = require("conform.util")
 return {
   "stevearc/conform.nvim",
   opts = function()
+    local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+    if not null_ls_status_ok then
+      return
+    end
     ---@class ConformOpts
+    local b = null_ls.builtins
     local opts = {
       -- LazyVim will use these options when formatting with the conform.nvim formatter
       format = {
@@ -47,6 +52,16 @@ return {
           }, "pint"),
           args = { "$FILENAME" },
           stdin = false,
+        },
+        sources = {
+          {
+            -- for tailwindcss
+            b.formatting.rustywind.with({
+              filetypes = { "html", "css", "javascriptreact", "typescriptreact", "svelte" },
+            }),
+            -- Lua
+            b.formatting.stylua,
+          },
         },
       },
     }

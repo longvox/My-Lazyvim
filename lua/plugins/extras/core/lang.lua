@@ -30,10 +30,6 @@ return {
       }
     end,
   },
-
-  -- disable the fancy UI for the debugger
-  { "rcarriga/nvim-dap-ui", enabled = false },
-
   -- which key integration
   {
     "folke/which-key.nvim",

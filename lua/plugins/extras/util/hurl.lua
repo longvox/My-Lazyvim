@@ -1,5 +1,4 @@
 return {
-
   {
     "folke/which-key.nvim",
     optional = true,
@@ -15,13 +14,12 @@ return {
       vim.list_extend(opts.ensure_installed, { "hurl" })
     end,
   },
-  { 'samueljoli/hurl.nvim' },
   {
     "jellydn/hurl.nvim",
     ft = "hurl",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     opts = {
-      env_file = { 'hurl.env', },
+      env_file = { "hurl.env" },
       mode = "split",
       auto_close = false,
       debug = true,

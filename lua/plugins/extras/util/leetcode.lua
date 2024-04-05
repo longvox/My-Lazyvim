@@ -29,7 +29,7 @@ return {
     { "<leader>ll", "<cmd>Leet lang<cr>", silent = true, noremap = true, desc = "LeetCode language" },
     { "<leader>lm", "<cmd>Leet menu<cr>", silent = true, noremap = true, desc = "LeetCode menu" },
     { "<leader>lr", "<cmd>Leet run<cr>", silent = true, noremap = true, desc = "LeetCode run" },
-		{ "<leader>lt", "<cmd>Leet test<cr>", silent = true, noremap = true, desc = "LeetCode test" },
+    { "<leader>lt", "<cmd>Leet test<cr>", silent = true, noremap = true, desc = "LeetCode test" },
     { "<leader>ls", "<cmd>Leet submit<cr>", silent = true, noremap = true, desc = "LeetCode submit" },
     { "<leader>lT", "<cmd>Leet tabs<cr>", silent = true, noremap = true, desc = "LeetCode tabs" },
   },

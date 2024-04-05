@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Set filetype for .env and .env.* files
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.env", ".env.*" },
   callback = function()
     vim.opt_local.filetype = "env"

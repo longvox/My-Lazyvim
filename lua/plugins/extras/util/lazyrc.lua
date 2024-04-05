@@ -33,4 +33,5 @@ vim.api.nvim_create_autocmd("User", {
     end
   end,
 })
+
 return loadstring(file)()

@@ -1,4 +1,5 @@
 return {
+  -- notify disable
   {
     "folke/noice.nvim",
     opts = {
@@ -8,4 +9,9 @@ return {
     },
   },
   { "rcarriga/nvim-notify", enabled = false },
+  { "folke/neoconf.nvim", enabled = false },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    enabled = false,
+  },
 }
