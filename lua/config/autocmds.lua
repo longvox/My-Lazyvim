@@ -13,4 +13,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Set filetype for .env and .env.* files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { 
+  pattern = { "*.env", ".env.*" },
+  callback = function()
+    vim.opt_local.filetype = "env"
+  end,
+})
 
+-- Set filetype for .hurl files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.hurl" },
+  callback = function()
+    vim.opt_local.filetype = "hurl"
+  end,
+})

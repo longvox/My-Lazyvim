@@ -9,65 +9,45 @@ return {
       },
     },
   },
-
   {
-    "rest-nvim/rest.nvim",
-    dependencies = {
-      {
-        "gennaro-tedesco/nvim-jqx",
-        ft = { "json", "yaml" },
-      },
-    },
-    ft = { "http" },
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, { "hurl" })
+    end,
+  },
+  { 'samueljoli/hurl.nvim' },
+  {
+    "jellydn/hurl.nvim",
+    ft = "hurl",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     opts = {
-      -- Open request results in a horizontal split
-      result_split_horizontal = true,
-      -- Keep the http file buffer above|left when split horizontal|vertical
-      result_split_in_place = false,
-      -- Skip SSL verification, useful for unknown certificates
-      skip_ssl_verification = false,
-      -- Encode URL before making request
-      encode_url = true,
-      -- Highlight request on run
-      highlight = {
-        enabled = true,
-        timeout = 150,
-      },
-      result = {
-        -- toggle showing URL, HTTP info, headers at top the of result window
-        show_url = true,
-        show_http_info = true,
-        show_headers = true,
-        -- executables or functions for formatting response body [optional]
-        -- set them to false if you want to disable them
-        formatters = {
-          json = "jq",
-          html = function(body)
-            return vim.fn.system({ "tidy", "-i", "-q", "-" }, body)
-          end,
+      env_file = { 'hurl.env', },
+      mode = "split",
+      auto_close = false,
+      debug = true,
+      show_notification = true,
+      formatters = {
+        json = { "jq" },
+        html = {
+          "prettier",
+          "--parser",
+          "html",
         },
       },
-      -- Jump to request line on run
-      jump_to_request = false,
-      env_file = ".env",
-      custom_dynamic_variables = {},
-      yank_dry_run = true,
     },
     keys = {
-      {
-        "<leader>hp",
-        function()
-          require("rest-nvim").run(true)
-        end,
-        desc = "Preview Request",
-      },
-      {
-        "<leader>hr",
-        function()
-          require("rest-nvim").run()
-        end,
-        desc = "Run Request",
-      },
+      -- Run API request
+      { "<leader>hA", "<cmd>HurlRunner<CR>", desc = "Hurl - Run All requests" },
+      { "<leader>hh", "<cmd>HurlRunnerAt<CR>", desc = "Hurl - Run Api request" },
+      { "<leader>he", "<cmd>HurlRunnerToEntry<CR>", desc = "Hurl - Run Api request to entry" },
+      { "<leader>tm", "<cmd>HurlToggleMode<CR>", desc = "Hurl - Toggle Mode" },
+      { "<leader>hv", "<cmd>HurlVerbose<CR>", desc = "Hurl - Run Api in verbose mode" },
+      -- Run Hurl request in visual mode
+      { "<leader>hh", ":HurlRunner<CR>", desc = "Hurl Runner", mode = "v" },
+      -- Manage variable
+      { "<leader>hg", ":HurlSetVariable", desc = "Hurl - Set global variable" },
+      { "<leader>hf", ":HurlSetEnvFile", desc = "Hurl - Set file variable" },
+      { "<leader>hG", "<cmd>HurlManageVariable<CR>", desc = "Hurl - Manage global variable" },
     },
   },
 }

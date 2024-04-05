@@ -5,7 +5,7 @@ return {
     opts = {
       inlay_hints = { enabled = vim.fn.has("nvim-0.10") },
       servers = {
-				autoformat  = false,
+        autoformat = false,
         -- sourcekit will be automatically installed with mason and loaded with lspconfig
         sourcekit = {},
       },
@@ -17,10 +17,10 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-		"lua-language-server",
-		"marksman",
-		"phpcs"
-	  })
+        "lua-language-server",
+        "marksman",
+        "phpcs",
+      })
       opts.ui = {
         icons = {
           package_installed = "✓",

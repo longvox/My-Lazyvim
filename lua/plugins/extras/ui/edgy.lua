@@ -50,6 +50,15 @@ return {
         -- any other neo-tree windows
         "neo-tree",
       },
+      right = {
+        {
+          title = "Hurl Nvim",
+          size = {
+            width = 0.4
+          },
+          ft = "hurl-nvim"
+        },
+      }
     },
   },
 }
