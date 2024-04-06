@@ -9,7 +9,6 @@ return {
         "eslint_d",
         "prettier",
         "prettierd",
-        "biome",
         -- code spell
         "codespell",
         "misspell",

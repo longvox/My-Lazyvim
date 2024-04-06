@@ -7,6 +7,7 @@
     "lazyvim.plugins.extras.editor.mini-diff",
     "lazyvim.plugins.extras.editor.mini-files",
     "lazyvim.plugins.extras.editor.mini-move",
+    "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.formatting.black",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.docker",
@@ -19,14 +20,14 @@
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lazyrc",
     "lazyvim.plugins.extras.linting.eslint",
-    "lazyvim.plugins.extras.lsp.none-ls",
+    "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.edgy",
+    "lazyvim.plugins.extras.util.dot",
     "plugins.extras.core.coding",
     "plugins.extras.core.disabled",
     "plugins.extras.core.editor",
     "plugins.extras.core.lang",
     "plugins.extras.core.ui",
-    "plugins.extras.editor.conform",
     "plugins.extras.editor.editorconfig",
     "plugins.extras.editor.git-blame",
     "plugins.extras.editor.git-conflict",
@@ -48,10 +49,10 @@
     "plugins.extras.lang.typescript",
     "plugins.extras.ui.edgy",
     "plugins.extras.ui.lualine",
+    "plugins.extras.util.formatting",
     "plugins.extras.util.hurl",
     "plugins.extras.util.leetcode",
-    "plugins.extras.util.mason",
-    "plugins.extras.util.nonels"
+    "plugins.extras.util.mason"
   ],
   "news": {
     "NEWS.md": "3314"

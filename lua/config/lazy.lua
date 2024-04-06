@@ -11,8 +11,6 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
-    { import = "plugins" },
     -- add project-level extension support
     { import = "plugins.extras.util.lazyrc" },
   },
@@ -32,6 +30,7 @@ require("lazy").setup({
       enabled = false,
     },
     rtp = {
+            
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",

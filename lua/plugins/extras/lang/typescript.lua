@@ -69,12 +69,6 @@ return {
     },
   },
   {
-    "nvimtools/none-ls.nvim",
-    opts = function(_, opts)
-      table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
-    end,
-  },
-  {
     "mfussenegger/nvim-dap",
     dependencies = {
       { "mxsdev/nvim-dap-vscode-js" },
