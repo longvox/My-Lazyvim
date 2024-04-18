@@ -32,17 +32,6 @@ return {
     },
   },
   {
-    -- A better annotation generator. Supports multiple languages and annotation conventions.
-    -- <C-n> to jump to next annotation, <C-p> to jump to previous annotation
-    "danymat/neogen",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    opts = neogeo_opts,
-    cmd = "Neogen",
-    keys = {
-      { "<leader>ci", "<cmd>Neogen<cr>", desc = "Neogen - Annotation generator" },
-    },
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, { "svelte" })

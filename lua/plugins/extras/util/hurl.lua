@@ -20,9 +20,13 @@ return {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     opts = {
       env_file = { "hurl.env" },
-      mode = "split",
+      mode = "popup",
+      popup_size = {
+        width = "90%",
+        height = "90%",
+      },
       auto_close = false,
-      debug = true,
+      debug = false,
       show_notification = true,
       formatters = {
         json = { "jq" },

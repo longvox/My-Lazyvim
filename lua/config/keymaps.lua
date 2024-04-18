@@ -3,11 +3,11 @@
 -- DO NOT USE THIS IN YOU OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 if vim.fn.executable("btop") == 1 then
   -- btop
   map("n", "<leader>xb", function() end, { desc = "btop" })
-  require("lazyvim.util").terminal.open({ "btop" }, { esc_esc = false, ctrl_hjkl = false })
 end
 
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
@@ -30,10 +30,16 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 
-
 -- Keep cursor in the center line when C-D / C-U
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
+
+-- Increment/decrement
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
+
+-- Delete a word backwards
+map("n", "dw", 'vb"_d')
 
 -- hack
 map("n", "<up>", ":echoe \"please use 'k' key\"<CR>")

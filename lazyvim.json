@@ -49,6 +49,7 @@
     "plugins.extras.lang.typescript",
     "plugins.extras.ui.edgy",
     "plugins.extras.ui.lualine",
+    "plugins.extras.util.database",
     "plugins.extras.util.formatting",
     "plugins.extras.util.hurl",
     "plugins.extras.util.leetcode",

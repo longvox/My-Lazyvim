@@ -20,6 +20,10 @@ vim.opt.listchars = "space:·,trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:�
 vim.opt.pumblend = 10
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "120"
+vim.opt.backspace = { "start", "eol", "indent" }
+vim.opt.splitkeep = "cursor"
+vim.opt.splitbelow = true -- Put new windows below current
+vim.opt.splitright = true -- Put new windows right of current
 
 -- Enable line wrap, and make it so that long lines wrap smartly
 vim.opt.wrap = true
@@ -34,12 +38,23 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
+
 -- Set encoding to utf-8
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Add asterisks in block comments
+vim.opt.formatoptions:append({ "r" })
+
 vim.g.autoformat = false -- globally
+
+vim.cmd([[filetype plugin on]])
+vim.cmd([[syntax on]])
 
 -- disable some fanzy UI stuff when run in Neovide
 if vim.g.neovide then

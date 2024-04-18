@@ -34,7 +34,7 @@ return {
       -- add <leader>mp to open markdown preview
       {
         "<leader>mp",
-        "<cmd>PrevimOpen<cr>",
+        "<cmd>MarkdownPreview<cr>",
         desc = "Markdown preview",
       },
     },
