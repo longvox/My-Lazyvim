@@ -1,11 +1,18 @@
 return {
-  -- cmdline tools and lsp servers
+  -- cmdline tools and lsp servers global
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
+    "williamboman/mason.nvim", 
+    opts = function(_, opts)
+      opts.ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "",
+          package_uninstalled = "✗",
+        },
+      }
+      opts.ensure_installed = {
         -- formatters
+        "stylua",
         "eslint_d",
         "prettier",
         "prettierd",
@@ -14,19 +21,17 @@ return {
         "misspell",
         "cspell",
         -- markdown
-        "markdownlint",
+        -- "markdownlint",
         -- rustywind for tailwindcss
         "rustywind",
-        -- php
-        "pint",
-        -- astro
-        "astro-language-server",
         -- Solidity
         "solidity",
         -- Python
-        "ruff",
+        -- "ruff",
         "isort",
-      },
-    },
+        "marksman",
+        "lua-language-server",
+      }
+    end,
   },
 }

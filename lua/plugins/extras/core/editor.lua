@@ -1,33 +1,3 @@
--- Commands
-local commandsPicker = nil
-local ToggleCommands = function()
-  local telescope = require("telescope.builtin")
-  local telescope_state = require("telescope.state")
-  if commandsPicker == nil then
-    telescope.commands()
-    local cached_pickers = telescope_state.get_global_key("cached_pickers") or {}
-    commandsPicker = cached_pickers[1]
-  else
-    telescope.resume({ picker = commandsPicker })
-  end
-end
-vim.api.nvim_create_user_command("ToggleCommands", ToggleCommands, { desc = "Toggle commands" })
-
--- Files
-local filesPicker = nil
-local ToggleFiles = function()
-  local telescope = require("telescope.builtin")
-  local telescope_state = require("telescope.state")
-  if filesPicker == nil then
-    telescope.find_files()
-    local cached_pickers = telescope_state.get_global_key("cached_pickers") or {}
-    filesPicker = cached_pickers[1]
-  else
-    telescope.resume({ picker = filesPicker })
-  end
-end
-vim.api.nvim_create_user_command("ToggleFiles", ToggleFiles, { desc = "Toggle files" })
-
 return {
   -- customize file explorer
   {
@@ -113,37 +83,6 @@ return {
       },
     },
   },
-  {
-    "kkoomen/vim-doge",
-    build = ":call doge#install()",
-    init = function()
-      vim.g.doge_enable_mappings = 0
-      vim.g.doge_mapping = "<leader>ci"
-      vim.g.doge_doc_standard_python = "numpy" ---@type "numpy"|"google"|"sphinx"|"reST"|"doxygen"
-      vim.g.doge_doc_standard_javascript = "jsdoc"
-      vim.g.doge_doc_standard_rust = "rustdoc"
-      vim.g.doge_doc_standard_lua = "luadoc"
-      vim.g.doge_doc_standard_vim = "vimdoc"
-      vim.g.doge_doc_standard_cpp = "doxygen"
-      vim.g.doge_doc_standard_c = "doxygen"
-      vim.g.doge_doc_standard_shell = "shell"
-      vim.g.doge_doc_standard_fish = "fish"
-      vim.g.doge_doc_standard_haskell = "haddock"
-      vim.g.doge_doc_standard_nix = "nixdoc"
-      vim.g.doge_doc_standard_ocaml = "ocamldoc"
-      vim.g.doge_doc_standard_purescript = "purescript"
-      vim.g.doge_doc_standard_reason = "reason"
-      vim.g.doge_doc_standard_svelte = "sveltedoc"
-      vim.g.doge_doc_standard_typescript = "tsdoc"
-      vim.g.doge_doc_standard_vue = "vuedoc"
-      vim.g.doge_doc_standard_yaml = "yamldoc"
-      vim.g.doge_doc_standard_zig = "zigdoc"
-      vim.g.doge_doc_standard_clojure = "clojuredoc"
-      vim.g.doge_doc_standard_clojurescript = "clojuredoc"
-      vim.g.doge_doc_standard_fennel = "fenneldoc"
-    end,
-    keys = {
-      { "<leader>ci", "<Plug>(doge-generate)", desc = "Docs generate" },
-    },
-  },
+
+  { "nmac427/guess-indent.nvim", lazy = false, priority = 50, config = true },
 }

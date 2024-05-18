@@ -15,18 +15,14 @@ return {
     end,
   },
   {
-    "jellydn/hurl.nvim",
+    "jellydn/hurl.nvim", 
     ft = "hurl",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     opts = {
       env_file = { "hurl.env" },
-      mode = "popup",
-      popup_size = {
-        width = "90%",
-        height = "90%",
-      },
+      mode = "split",
       auto_close = false,
-      debug = false,
+      debug = true,
       show_notification = true,
       formatters = {
         json = { "jq" },

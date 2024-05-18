@@ -1,4 +1,17 @@
 return {
+
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = vim.fn.has("nvim-0.10") },
+      servers = {
+        -- sourcekit will be automatically installed with mason and loaded with lspconfig
+        sourcekit = {},
+        autoformat = false,
+      },
+    },
+  },
+
   -- extend auto completion
   {
     "hrsh7th/nvim-cmp",
@@ -32,8 +45,18 @@ return {
           "make",
           "mermaid",
           "sql",
+          "vue"
         })
       end
     end,
-  }
+  },
+  -- which key integration
+  {
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["<leader>dw"] = { name = "+widgets" },
+      },
+    },
+  },
 }

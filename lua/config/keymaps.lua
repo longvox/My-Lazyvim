@@ -3,7 +3,6 @@
 -- DO NOT USE THIS IN YOU OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
 if vim.fn.executable("btop") == 1 then
   -- btop
@@ -33,13 +32,6 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 -- Keep cursor in the center line when C-D / C-U
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
-
--- Increment/decrement
-map("n", "+", "<C-a>")
-map("n", "-", "<C-x>")
-
--- Delete a word backwards
-map("n", "dw", 'vb"_d')
 
 -- hack
 map("n", "<up>", ":echoe \"please use 'k' key\"<CR>")
@@ -81,3 +73,5 @@ map("n", "c", '"_c')
 map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
+
+map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })

@@ -14,4 +14,14 @@ return {
     "nvim-telescope/telescope-fzf-native.nvim",
     enabled = false,
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
+  },
+
+  {
+
+    "stevearc/conform.nvim",
+    enabled = false,
+  },
 }

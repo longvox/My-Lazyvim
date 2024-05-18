@@ -69,10 +69,6 @@ return {
     },
   },
   {
-    "mfussenegger/nvim-dap",
-    dependencies = { "leoluz/nvim-dap-go", opts = {} },
-  },
-  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/neotest-go",

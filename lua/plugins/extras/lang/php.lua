@@ -8,6 +8,8 @@ return {
           "twigcs",
           "php-cs-fixer",
           "psalm",
+          "pint",
+          "phpcs",
         })
       end
     end,
