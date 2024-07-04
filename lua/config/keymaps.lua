@@ -12,6 +12,11 @@ end
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
+map('n', '(', ':tabprevious<CR>', { noremap = true, silent = true })
+map('n', ')', ':tabnext<CR>', { noremap = true, silent = true })
+map('n', '_', ':tabclose<CR>', { noremap = true, silent = true })
+map('n', '+', ':tabnew<CR>', { noremap = true, silent = true })
+
 if vim.fn.has("macunix") then
   -- Move selected line / block of text in visual mode
   -- shift + k to move up
@@ -75,3 +80,4 @@ map("v", "c", '"_c')
 map("v", "C", '"_C')
 
 map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
+

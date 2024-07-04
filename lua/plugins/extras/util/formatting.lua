@@ -63,7 +63,7 @@ return {
         }),
         -- other stuff
         b.diagnostics.todo_comments,
-        b.diagnostics.trail_space,
+        -- b.diagnostics.trail_space,
         b.code_actions.refactoring,
       }
 

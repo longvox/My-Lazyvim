@@ -40,7 +40,7 @@ return {
           },
         },
         -- CSS
-        cssls = {},
+        -- cssls = {},
       },
     },
   },
