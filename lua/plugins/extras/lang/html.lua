@@ -45,22 +45,14 @@ return {
     },
   },
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = {
-      defaults = {
-        ["<leader>lz"] = { name = "+Color" },
-      },
-    },
-  },
-  {
     "uga-rosa/ccc.nvim",
     opts = {},
     cmd = { "CccPick", "CccConvert", "CccHighlighterEnable", "CccHighlighterDisable", "CccHighlighterToggle" },
     keys = {
-      { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick" },
-      { "<leader>zc", "<cmd>CccConvert<cr>", desc = "Convert" },
-      { "<leader>zh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
+      { "<leader>cz", desc = "Color" },
+      { "<leader>czp", "<cmd>CccPick<cr>", desc = "Pick" },
+      { "<leader>czc", "<cmd>CccConvert<cr>", desc = "Convert" },
+      { "<leader>czh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
     },
   },
 }

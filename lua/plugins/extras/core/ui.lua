@@ -5,7 +5,10 @@ return {
   -- configure tokyonight theme
   {
     "folke/tokyonight.nvim",
-    optional = true,
+    enalbled = false,
+  },
+  {
+    "kadekillary/skull-vim",
   },
 
   -- bufferline

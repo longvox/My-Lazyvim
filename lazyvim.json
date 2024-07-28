@@ -4,7 +4,7 @@
     "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.coding.mini-comment",
     "lazyvim.plugins.extras.coding.mini-surround",
-    "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.editor.aerial",
     "lazyvim.plugins.extras.editor.illuminate",
     "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.editor.leap",
@@ -14,15 +14,18 @@
     "lazyvim.plugins.extras.editor.refactoring",
     "lazyvim.plugins.extras.lang.angular",
     "lazyvim.plugins.extras.lang.ansible",
+    "lazyvim.plugins.extras.lang.astro",
     "lazyvim.plugins.extras.lang.cmake",
     "lazyvim.plugins.extras.lang.docker",
     "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.lang.prisma",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.rust",
     "lazyvim.plugins.extras.lang.sql",
+    "lazyvim.plugins.extras.lang.svelte",
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.terraform",
     "lazyvim.plugins.extras.lang.typescript",
@@ -34,6 +37,8 @@
     "lazyvim.plugins.extras.ui.mini-indentscope",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
+    "lazyvim.plugins.extras.util.rest",
+    "lazyvim.plugins.extras.util.startuptime",
     "lazyvim.plugins.extras.vscode",
     "plugins.extras.core.coding",
     "plugins.extras.core.disabled",
@@ -41,8 +46,7 @@
     "plugins.extras.core.ui",
     "plugins.extras.editor.chatgpt",
     "plugins.extras.editor.git-blame",
-    "plugins.extras.editor.git-conflict",
-    "plugins.extras.editor.hurl",
+    "plugins.extras.editor.git-conflict", 
     "plugins.extras.editor.leetcode",
     "plugins.extras.editor.log-highlight",
     "plugins.extras.editor.multi-cursor",
@@ -68,7 +72,7 @@
     "plugins.extras.util.tmux"
   ],
   "news": {
-    "NEWS.md": "6077"
+    "NEWS.md": "6520"
   },
   "version": 6
 }

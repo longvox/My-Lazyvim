@@ -33,14 +33,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
--- Set filetype for .hurl files
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = { "*.hurl" },
-    callback = function()
-        vim.opt_local.filetype = "hurl"
-    end,
-})
-
 -- vim.cmd([[
 --     " Disable LSP BufWritePre autocmd
 --     autocmd! lsp_c_1_b_45_save BufWritePre

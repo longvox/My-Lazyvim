@@ -32,11 +32,7 @@ return {
     ft = { "markdown" },
     keys = {
       -- add <leader>mp to open markdown preview
-      {
-        "<leader>mp",
-        "<cmd>PrevimOpen<cr>",
-        desc = "Markdown preview",
-      },
+      { "<leader>cp", "<cmd>PrevimOpen<cr>", desc = "Markdown preview" },
     },
   },
 }

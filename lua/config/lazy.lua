@@ -22,7 +22,7 @@ require("lazy").setup({
     version = "*", -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "lackluster" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     cache = {
