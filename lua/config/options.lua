@@ -29,12 +29,15 @@ vim.opt.linebreak = true
 vim.opt.swapfile = false
 
 vim.opt.spell = false
+
 -- disable some extension providers
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
-    
+
+vim.g.lazyvim_php_lsp = "intelephense"
+
 -- Set encoding to utf-8
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
@@ -43,12 +46,6 @@ vim.opt.fileencoding = "utf-8"
 vim.g.autoformat = false -- globally
 vim.b.autoformat = false -- buffer-local
 
--- disable diagnostic
-vim.diagnostic.enable(false)
-vim.cmd [[
-  syntax match TrailingSpaceTab /[\s\t]\+$/
-  hi TrailingSpaceTab guibg=gray
-]]
 -- disable some fanzy UI stuff when run in Neovide
 if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0

@@ -20,8 +20,12 @@ return {
   },
 
   {
-
     "stevearc/conform.nvim",
     enabled = false,
   },
+
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  }
 }

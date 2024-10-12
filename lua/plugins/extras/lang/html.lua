@@ -20,6 +20,7 @@ return {
         html = {
           filetypes = {
             "html",
+            "blade",
             "javascript",
             "javascriptreact",
             "javascript.jsx",
@@ -44,6 +45,26 @@ return {
       },
     },
   },
+  -- auto pairs
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = true,
+  },
+
+  -- auto html tag completion
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    opts = {
+      filetypes = {
+        "html",
+        "vue",
+        "blade",
+      },
+    },
+  },
+
   {
     "uga-rosa/ccc.nvim",
     opts = {},

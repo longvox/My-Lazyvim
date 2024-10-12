@@ -33,10 +33,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
--- vim.cmd([[
---     " Disable LSP BufWritePre autocmd
---     autocmd! lsp_c_1_b_45_save BufWritePre
---
---     " Disable EditorConfig BufWritePre autocmd
---     autocmd! editorconfig BufWritePre
--- ]])
+vim.cmd([[
+    au BufRead,BufNewFile * set fileformat=unix
+]])

@@ -9,13 +9,15 @@ if vim.fn.executable("btop") == 1 then
   map("n", "<leader>xb", function() end, { desc = "btop" })
 end
 
+map("n", ";", ":")
+
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 
-map('n', '(', ':tabprevious<CR>', { noremap = true, silent = true })
-map('n', ')', ':tabnext<CR>', { noremap = true, silent = true })
-map('n', '_', ':tabclose<CR>', { noremap = true, silent = true })
-map('n', '+', ':tabnew<CR>', { noremap = true, silent = true })
+map("n", "(", ":tabprevious<CR>", { noremap = true, silent = true })
+map("n", ")", ":tabnext<CR>", { noremap = true, silent = true })
+map("n", "_", ":tabclose<CR>", { noremap = true, silent = true })
+map("n", "+", ":tabnew<CR>", { noremap = true, silent = true })
 
 if vim.fn.has("macunix") then
   -- Move selected line / block of text in visual mode
@@ -79,5 +81,33 @@ map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
 
+map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
+-- Mixed mode: half-tabs-are-spaces
+map(
+  "n",
+  "<leader>ctM",
+  ":set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>",
+  { noremap = true, silent = true, desc = "Mixed Mode: Half-tabs, Half-spaces" }
+)
+-- Mini tabs, small "m"
+map(
+  "n",
+  "<leader>ctm",
+  ":set expandtab tabstop=2 shiftwidth=2<CR>",
+  { noremap = true, silent = true, desc = "Mini Tabs (2 spaces)" }
+)
+-- Little tabs
+map(
+  "n",
+  "<leader>ctt",
+  ":set expandtab tabstop=4 shiftwidth=4<CR>",
+  { noremap = true, silent = true, desc = "Little Tabs (4 spaces)" }
+)
+-- Big tabs
+map(
+  "n",
+  "<leader>ctT",
+  ":set expandtab tabstop=8 shiftwidth=8<CR>",
+  { noremap = true, silent = true, desc = "Big Tabs (8 spaces)" }
+)
 map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
-

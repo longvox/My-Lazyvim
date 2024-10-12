@@ -5,15 +5,32 @@ return {
   -- configure tokyonight theme
   {
     "folke/tokyonight.nvim",
-    enalbled = false,
   },
+  
+  -- Configure LazyVim to load gruvbox
   {
-    "kadekillary/skull-vim",
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "tokyonight-night",
+    },
+  },
+
+  {
+    "ntpeters/vim-better-whitespace",
+    event = "VeryLazy",
+    config = function()
+      vim.g.better_whitespace_guicolor = "gray"
+      vim.g.better_whitespace_enabled = 1
+      vim.g.strip_only_modified_lines = 1
+      vim.g.strip_whitespace_on_save = 0
+      vim.g.strip_whitespace_confirm = 0
+    end,
   },
 
   -- bufferline
   {
     "akinsho/bufferline.nvim",
+    enabled = false,
     opts = {
       options = {
         numbers = "ordinal", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,

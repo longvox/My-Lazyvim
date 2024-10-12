@@ -3,7 +3,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      inlay_hints = { enabled = vim.fn.has("nvim-0.10") },
+      inlay_hints = { enabled = false },
+      diagnostics = {
+        virtual_text = false
+      },
       servers = {
         -- sourcekit will be automatically installed with mason and loaded with lspconfig
         sourcekit = {},

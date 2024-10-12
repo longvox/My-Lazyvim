@@ -1,7 +1,8 @@
 return {
   -- cmdline tools and lsp servers global
   {
-    "williamboman/mason.nvim", 
+    "williamboman/mason.nvim",
+    config = function() end,
     opts = function(_, opts)
       opts.ui = {
         icons = {

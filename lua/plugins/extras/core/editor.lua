@@ -2,10 +2,10 @@ return {
   -- customize file explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = { 
+    opts = {
       close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       window = {
-        position = "right",
+        position = "left",
         mappings = {
           ["<space>"] = "none",
           ["l"] = "open",
@@ -23,11 +23,11 @@ return {
 
       source_selector = {
         winbar = true,
-        statusline = false,
+        statusline = true,
         sources = {
           { source = "filesystem", display_name = " 󰉓 File " },
           { source = "git_status", display_name = " 󰊢 Git " },
-          { source = "buffers", display_name = " 󰓩 Buf " }
+          { source = "buffers", display_name = " 󰓩 Buf " },
         },
         content_layout = "center",
       },
@@ -39,16 +39,29 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
+        -- layout_strategy = "vertical",
+        -- layout_config = {
+        --   horizontal = {
+        --     preview_cutoff = 0.2,
+        --     preview_width = 0.5,
+        --   },
+        --   height = 0.7,
+        --   width = 0.5,
+        -- },
+        prompt_title = "",
+        results_title = "",
+        preview_title = "",
         prompt_prefix = " ",
         selection_caret = " ",
-        layout_strategy = "horizontal",
+        entry_prefix = " ",
+        layout_strategy = "vertical",
         layout_config = {
-          horizontal = {
-            preview_cutoff = 0.2,
-            preview_width = 0.5,
+          vertical = {
+            preview_cutoff = 10,
+            prompt_min_width = 40,
+            prompt_max_width = 80,
+            preview_width = 50,
           },
-          height = 0.9,
-          width = 0.9,
         },
         mappings = {
           i = {
@@ -85,4 +98,10 @@ return {
   },
 
   { "nmac427/guess-indent.nvim", lazy = false, priority = 50, config = true },
+  {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip.loaders.from_snipmate").lazy_load({ path = "~/.config/nvim/snippets" })
+    end,
+  },
 }
