@@ -57,10 +57,8 @@ return {
         layout_strategy = "vertical",
         layout_config = {
           vertical = {
-            preview_cutoff = 10,
-            prompt_min_width = 40,
-            prompt_max_width = 80,
-            preview_width = 50,
+            width = 120,
+            preview_height = 0.7,
           },
         },
         mappings = {

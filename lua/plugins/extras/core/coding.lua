@@ -5,7 +5,7 @@ return {
     opts = {
       inlay_hints = { enabled = false },
       diagnostics = {
-        virtual_text = false
+        -- virtual_text = false
       },
       servers = {
         -- sourcekit will be automatically installed with mason and loaded with lspconfig

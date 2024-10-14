@@ -1,8 +1,7 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 --
---
---
+
 -- Disable swapfile
 vim.opt.swapfile = false
 
@@ -57,3 +56,5 @@ if vim.g.neovide then
   vim.cmd([[nnoremap <S-ScrollWheelUp> <ScrollWheelRight>]])
   vim.cmd([[nnoremap <S-ScrollWheelDown> <ScrollWheelLeft>]])
 end
+
+vim.diagnostic.enable(false)

@@ -4,15 +4,30 @@
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
 
-if vim.fn.executable("btop") == 1 then
-  -- btop
-  map("n", "<leader>xb", function() end, { desc = "btop" })
-end
+local utils = require('config.utils')
+
+-- Remove some default keymaps
+-- pcall(vim.api.nvim_del_keymap, "n", "<")
+-- pcall(vim.api.nvim_del_keymap, "n", ">")
+-- pcall(vim.api.nvim_del_keymap, "v", "<")
+-- pcall(vim.api.nvim_del_keymap, "v", ">")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>K")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>l")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>L")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>E")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>R")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>/")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>`")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>?")
+-- pcall(vim.api.nvim_del_keymap, "n", "j")
+-- pcall(vim.api.nvim_del_keymap, "n", "k")
+-- pcall(vim.api.nvim_del_keymap, "n", "<leader>ul")
+-- pcall(vim.api.nvim_del_keymap, "n", "<leader>uh")
 
 map("n", ";", ":")
 
-map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 map("n", "(", ":tabprevious<CR>", { noremap = true, silent = true })
 map("n", ")", ":tabnext<CR>", { noremap = true, silent = true })
@@ -81,7 +96,20 @@ map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
 
+
+map("n", "U", "<CMD>redo<CR>", { desc = "Redo", noremap = true })
+
+-- Define Name group which-key
+map("n", "<leader>r", "<CMD>NOP<CR>", { desc = "Refactor", noremap = true, silent = true })
+map("n", "<leader>l", "<CMD>NOP<CR>", { desc = "LeetCode", noremap = true, silent = true })
+map("n", "<leader>R", "<CMD>NOP<CR>", { desc = "Rest", noremap = true, silent = true })
 map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
+map("n", "<leader>ch", "<CMD>NOP<CR>", { desc = "ChatGPT", noremap = true, silent = true })
+
+
+map("n", "<leader>gd", function() utils.telescope_diff_from_history() end, { desc = "Diff from git history" })
+map("n", "<leader>gD", function() utils.telescope_diff_file() end, { desc = "Diff file with current buffer" })
+
 -- Mixed mode: half-tabs-are-spaces
 map(
   "n",

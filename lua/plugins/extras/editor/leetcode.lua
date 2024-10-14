@@ -12,7 +12,6 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<leader>l", desc = "Leet code" },
     { "<leader>lc", "<cmd>Leet console<cr>", silent = true, noremap = true, desc = "LeetCode console" },
     { "<leader>ld", "<cmd>Leet desc<cr>", silent = true, noremap = true, desc = "LeetCode toggle description" },
     { "<leader>lh", "<cmd>Leet hints<cr>", silent = true, noremap = true, desc = "LeetCode hints" },
