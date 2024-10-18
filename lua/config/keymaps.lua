@@ -78,7 +78,7 @@ map("n", "b", "^")
 map("n", "e", "$")
 
 -- $/^ doesn't do anything
-map("n", "$", "k<NOP>")
+map("n", "$", "<NOP>")
 map("n", "^", "<NOP>")
 -- without yanking it
 --
