@@ -4,13 +4,10 @@
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
 
-local utils = require('config.utils')
+local utils = require("utils.utils")
 
 -- Remove some default keymaps
--- pcall(vim.api.nvim_del_keymap, "n", "<")
--- pcall(vim.api.nvim_del_keymap, "n", ">")
--- pcall(vim.api.nvim_del_keymap, "v", "<")
--- pcall(vim.api.nvim_del_keymap, "v", ">")
+
 pcall(vim.api.nvim_del_keymap, "n", "<leader>K")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>l")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>L")
@@ -19,10 +16,7 @@ pcall(vim.api.nvim_del_keymap, "n", "<leader>R")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>/")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>`")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>?")
--- pcall(vim.api.nvim_del_keymap, "n", "j")
--- pcall(vim.api.nvim_del_keymap, "n", "k")
--- pcall(vim.api.nvim_del_keymap, "n", "<leader>ul")
--- pcall(vim.api.nvim_del_keymap, "n", "<leader>uh")
+
 
 map("n", ";", ":")
 
@@ -44,6 +38,14 @@ if vim.fn.has("macunix") then
   map("i", "<C-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up", silent = true })
   map("v", "<C-S-j>", ":m '>+1<cr>gv=gv", { desc = "Move down", silent = true })
   map("v", "<C-S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", silent = true })
+end
+
+if vim.g.vscode then
+  -- Only map if that is inside vscode
+  map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+  map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+  map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+  map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 end
 
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
@@ -96,8 +98,14 @@ map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
 
-
 map("n", "U", "<CMD>redo<CR>", { desc = "Redo", noremap = true })
+
+-- Select all text in buffer with Alt-a
+map("n", "<C-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" })
+
+map("n", "z0", "1z=", {
+  desc = "Fix world under cursor",
+})
 
 -- Define Name group which-key
 map("n", "<leader>r", "<CMD>NOP<CR>", { desc = "Refactor", noremap = true, silent = true })
@@ -106,9 +114,12 @@ map("n", "<leader>R", "<CMD>NOP<CR>", { desc = "Rest", noremap = true, silent = 
 map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
 map("n", "<leader>ch", "<CMD>NOP<CR>", { desc = "ChatGPT", noremap = true, silent = true })
 
-
-map("n", "<leader>gd", function() utils.telescope_diff_from_history() end, { desc = "Diff from git history" })
-map("n", "<leader>gD", function() utils.telescope_diff_file() end, { desc = "Diff file with current buffer" })
+map("n", "<leader>gd", function()
+  utils.telescope_diff_from_history()
+end, { desc = "Diff from git history" })
+map("n", "<leader>gD", function()
+  utils.telescope_diff_file()
+end, { desc = "Diff file with current buffer" })
 
 -- Mixed mode: half-tabs-are-spaces
 map(
@@ -139,3 +150,21 @@ map(
   { noremap = true, silent = true, desc = "Big Tabs (8 spaces)" }
 )
 map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
+
+-- Author: Karl Yngve Lervåg
+--    See: https://github.com/lervag/dotnvim
+
+-- Close all fold except the current one.
+map("n", "zv", "zMzvzz", {
+  desc = "Close all folds except the current one",
+})
+
+-- Close current fold when open. Always open next fold.
+map("n", "zj", "zcjzOzz", {
+  desc = "Close current fold when open. Always open next fold.",
+})
+
+-- Close current fold when open. Always open previous fold.
+map("n", "zk", "zckzOzz", {
+  desc = "Close current fold when open. Always open previous fold.",
+})

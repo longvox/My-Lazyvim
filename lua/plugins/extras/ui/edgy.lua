@@ -19,6 +19,12 @@ return {
     },
     opts = function()
       local opts = {
+        wo = {
+          spell = false,
+        },
+        animate = {
+          enabled = false,
+        },
         bottom = {
           {
             ft = "toggleterm",
