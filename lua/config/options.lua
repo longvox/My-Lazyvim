@@ -8,7 +8,6 @@ local global = vim.g
 local buffer = vim.b
 local cmd = vim.cmd
 
-
 -- disable some extension providers
 global.loaded_python3_provider = 0
 global.loaded_ruby_provider = 0
@@ -76,7 +75,7 @@ opt.ignorecase = true -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
 opt.laststatus = 3 -- global statusline
 opt.linebreak = true -- Wrap lines at convenient points
-opt.list = false -- Show some invisible characters (tabs...
+opt.list = true -- Show some invisible characters (tabs...
 opt.listchars = "space:·,trail:█,nbsp:◇,tab:→ ,extends:▸,precedes:◂"
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number

@@ -16,6 +16,11 @@ pcall(vim.api.nvim_del_keymap, "n", "<leader>R")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>/")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>`")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>?")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>gc")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>gb")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>gB")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>gs")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>:")
 
 
 map("n", ";", ":")
@@ -108,11 +113,8 @@ map("n", "z0", "1z=", {
 })
 
 -- Define Name group which-key
-map("n", "<leader>r", "<CMD>NOP<CR>", { desc = "Refactor", noremap = true, silent = true })
-map("n", "<leader>l", "<CMD>NOP<CR>", { desc = "LeetCode", noremap = true, silent = true })
-map("n", "<leader>R", "<CMD>NOP<CR>", { desc = "Rest", noremap = true, silent = true })
 map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
-map("n", "<leader>ch", "<CMD>NOP<CR>", { desc = "ChatGPT", noremap = true, silent = true })
+
 
 map("n", "<leader>gd", function()
   utils.telescope_diff_from_history()
