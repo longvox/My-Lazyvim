@@ -30,11 +30,11 @@ return {
               desc = "Config",
               action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
             },
-            { icon = "󰊳 ", desc = "Update", group = "@property", action = ":Lazy update", key = "U" },
+            { icon = "󰊳 ", desc = "Update", group = "@property", action = ":Lazy update", key = "u" },
             { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy },
             {
               icon = "󰀳 ",
-              key = "L",
+              key = "x",
               desc = "LazyExtras",
               action = ":LazyExtras",
               enabled = package.loaded.lazyExtras,
@@ -44,7 +44,7 @@ return {
         },
         sections = {
           { section = "header" },
-          { pane = 2, section = "terminal", cmd = "colorscript -e square", height = 5, padding = 0 },
+          { pane = 2, section = "terminal", cmd = "colorscript -e squere", height = 5, padding = 0 },
           { pane = 2, section = "terminal", cmd = "colorscript -e square", height = 5, padding = 0 },
           { pane = 2, section = "terminal", cmd = "colorscript -e square", height = 5, padding = 1 },
           { section = "keys", gap = 1, padding = 1 },

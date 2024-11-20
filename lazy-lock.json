@@ -15,7 +15,7 @@
   "editorconfig.nvim": { "branch": "master", "commit": "2af880947129f1ab776b732a4eecb92528472ef5" },
   "flit.nvim": { "branch": "main", "commit": "1ef72de6a02458d31b10039372c8a15ab8989e0d" },
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
-  "fzf-lua": { "branch": "main", "commit": "63e49780a607e7dd01e25eb7db43e60c8f4f016f" },
+  "fzf-lua": { "branch": "main", "commit": "9427dc65afaa7972fb20fc52280cd1449f691928" },
   "git-blame.nvim": { "branch": "master", "commit": "2883a7460f611c2705b23f12d58d398d5ce6ec00" },
   "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" },
   "grug-far.nvim": { "branch": "main", "commit": "9a2f78219390b47d67795ab09390d7f092e23976" },
