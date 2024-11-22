@@ -26,8 +26,7 @@ return {
         statusline = true,
         sources = {
           { source = "filesystem", display_name = " 󰉓 File " },
-          { source = "git_status", display_name = " 󰊢 Git " },
-          { source = "buffers", display_name = " 󰓩 Buf " },
+          { source = "git_status", display_name = " 󰊢 Git " }
         },
         content_layout = "center",
       },

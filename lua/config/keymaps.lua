@@ -21,7 +21,7 @@ pcall(vim.api.nvim_del_keymap, "n", "<leader>gb")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>gB")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>gs")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>:")
-
+pcall(vim.api.nvim_del_keymap, "n", "<leader>,")
 
 map("n", ";", ":")
 
@@ -112,9 +112,15 @@ map("n", "z0", "1z=", {
   desc = "Fix world under cursor",
 })
 
+map(
+  "n",
+  ",",
+  "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
+  { noremap = true, silent = true, desc = "Switch Bufffer" }
+)
+
 -- Define Name group which-key
 map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
-
 
 map("n", "<leader>gd", function()
   utils.telescope_diff_from_history()
