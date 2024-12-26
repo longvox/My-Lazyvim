@@ -26,7 +26,7 @@ return {
         statusline = true,
         sources = {
           { source = "filesystem", display_name = " 󰉓 File " },
-          { source = "git_status", display_name = " 󰊢 Git " }
+          { source = "git_status", display_name = " 󰊢 Git " },
         },
         content_layout = "center",
       },
@@ -100,5 +100,5 @@ return {
     config = function()
       require("luasnip.loaders.from_snipmate").lazy_load({ path = "~/.config/nvim/snippets" })
     end,
-  },
+  }
 }

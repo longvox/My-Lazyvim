@@ -135,3 +135,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+
+
+-- Set filetype for .toml files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = augroup("log_filetype"),
+  pattern = { "*.log" },
+  callback = function()
+    vim.opt_local.filetype = "json"
+  end,
+})
