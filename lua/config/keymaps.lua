@@ -7,12 +7,17 @@ local map = vim.keymap.set
 local utils = require("utils.utils")
 
 -- Remove some default keymaps
-
+pcall(vim.api.nvim_del_keymap, "n", "<leader>S")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>K")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>l")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>L")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>E")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>R")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>d")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>dp")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>dpp")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>dph")
+pcall(vim.api.nvim_del_keymap, "n", "<leader>dps")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>/")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>`")
 pcall(vim.api.nvim_del_keymap, "n", "<leader>?")
@@ -176,3 +181,24 @@ map("n", "zj", "zcjzOzz", {
 map("n", "zk", "zckzOzz", {
   desc = "Close current fold when open. Always open previous fold.",
 })
+
+map('n', '<leader>og', function()
+  local file_path = vim.fn.expand('%')
+  local git_root = vim.fn.system('git rev-parse --show-toplevel'):gsub('\n$', '')
+  local remote_url = vim.fn.system('git remote get-url origin'):gsub('\n$', '')
+  local branch = vim.fn.system('git branch --show-current'):gsub('\n$', '')
+
+  -- Convert SSH to HTTPS if necessary
+  if remote_url:match('git@github.com:') then
+    remote_url = remote_url:gsub('git@github.com:', 'https://github.com/'):gsub('%.git$', '')
+  end
+
+  -- Get the relative file path within the Git repository
+  local relative_path = file_path:gsub(git_root .. '/', '')
+
+  -- Construct the GitHub URL
+  local github_url = string.format('%s/blob/%s/%s', remote_url, branch, relative_path)
+
+  -- Open the URL in the default web browser
+  vim.fn.jobstart({ 'open', github_url }, { detach = true })
+end, { desc = 'Open current file on GitHub' })

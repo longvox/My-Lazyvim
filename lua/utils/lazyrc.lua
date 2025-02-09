@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd("User", {
     local Util = require("lazyvim.util")
     local lazyrc_idx = Util.plugin.extra_idx("lazyrc")
 
+
     if lazyrc_idx and lazyrc_idx ~= #Config.spec.modules then
       Util.warn({
         "The `lazyrc` extra must be the last plugin spec added to **lazy.nvim**. ",

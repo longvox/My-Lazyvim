@@ -46,4 +46,28 @@ return {
     "nvimdev/dashboard-nvim",
     enabled = false,
   },
+  {
+    "ggandor/flit.nvim",
+    enabled = false,
+  },
+  {
+    "nvim-neotest/neotest",
+    enabled = false,
+  },
+  {
+    "nvim-neotest/neotest-jest",
+    enabled = false,
+  },
+  {
+    "nvim-neotest/neotest-playwright",
+    enabled = false,
+  },
+  {
+    "nvim-neotest/neotest-python",
+    enabled = false,
+  },
+  {
+    "nvim-neotest/neotest-vitest",
+    enabled = false,
+  },
 }

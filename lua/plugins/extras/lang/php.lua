@@ -6,7 +6,7 @@ return {
         vim.list_extend(opts.ensure_installed, {
           "php",
           "twig",
-          "blade",
+          -- "blade",
           "phpdoc",
           "php_only",
         })

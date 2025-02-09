@@ -20,7 +20,7 @@ return {
         html = {
           filetypes = {
             "html",
-            "blade",
+            -- "blade",
             "javascript",
             "javascriptreact",
             "javascript.jsx",
